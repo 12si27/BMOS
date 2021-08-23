@@ -58,12 +58,12 @@
         ClockBT.Text = Now.ToString("HH:mm:ss")
 
         S_autostart = checkStartUp()
-        S_topmost = (GetINI("VBMO", "topmost") = "True")
-        S_dcautostart = Not (GetINI("VBMO", "dcautostart") = "False")
-        S_dbuffer = (GetINI("VBMO", "disabledbuffer") = "True")
-        S_killexp = Not (GetINI("VBMO", "killexp") = "False")
+        S_topmost = (GetINI("BMOS", "topmost") = "True")
+        S_dcautostart = Not (GetINI("BMOS", "dcautostart") = "False")
+        S_dbuffer = (GetINI("BMOS", "disabledbuffer") = "True")
+        S_killexp = Not (GetINI("BMOS", "killexp") = "False")
 
-        TopMost = (GetINI("VBMO", "topmost") = "True")
+        TopMost = (GetINI("BMOS", "topmost") = "True")
 
         DrawChk()
 
@@ -138,18 +138,18 @@
             Debug.WriteLine(ex.Message)
         End Try
 
-        SetINI("VBMO", "topmost", S_topmost.ToString)
-        SetINI("VBMO", "dcautostart", S_dcautostart.ToString)
-        SetINI("VBMO", "disabledbuffer", S_dbuffer.ToString)
-        SetINI("VBMO", "killexp", S_killexp.ToString)
+        SetINI("BMOS", "topmost", S_topmost.ToString)
+        SetINI("BMOS", "dcautostart", S_dcautostart.ToString)
+        SetINI("BMOS", "disabledbuffer", S_dbuffer.ToString)
+        SetINI("BMOS", "killexp", S_killexp.ToString)
         Close()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        SetINI("VBMO", "topmost", "")
-        SetINI("VBMO", "dcautostart", "")
-        SetINI("VBMO", "disabledbuffer", "")
-        SetINI("VBMO", "killexp", "")
+        SetINI("BMOS", "topmost", "")
+        SetINI("BMOS", "dcautostart", "")
+        SetINI("BMOS", "disabledbuffer", "")
+        SetINI("BMOS", "killexp", "")
         Close()
     End Sub
 

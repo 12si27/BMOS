@@ -10,7 +10,7 @@
 
     Private Sub SetColorBT_Click(sender As Object, e As EventArgs) Handles SetColorBT.Click
         If ColorDialog1.ShowDialog() = DialogResult.OK Then
-            'SetINI("VBMO", "bgColor", ColorTranslator.ToHtml(ColorDialog1.Color))
+            'SetINI("BMOS", "bgColor", ColorTranslator.ToHtml(ColorDialog1.Color))
             PrevBox.BackColor = ColorDialog1.Color
             SetColor = ColorDialog1.Color
             colorChanged = True
@@ -19,7 +19,7 @@
 
     Private Sub SetImageBT_Click(sender As Object, e As EventArgs) Handles SetImageBT.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-            'SetINI("VBMO", "bgImage", OpenFileDialog1.FileName)
+            'SetINI("BMOS", "bgImage", OpenFileDialog1.FileName)
             Try
                 PrevBox.BackgroundImage = Image.FromFile(OpenFileDialog1.FileName)
                 SetImage = OpenFileDialog1.FileName
@@ -40,22 +40,22 @@
         Me.Location = New Point(0, 0)
         ClockBT.Text = Now.ToString("HH:mm:ss")
 
-        If Not GetINI("VBMO", "bgColor") = "" Then
-            PrevBox.BackColor = ColorTranslator.FromHtml(GetINI("VBMO", "bgColor"))
+        If Not GetINI("BMOS", "bgColor") = "" Then
+            PrevBox.BackColor = ColorTranslator.FromHtml(GetINI("BMOS", "bgColor"))
         Else
             PrevBox.BackColor = Color.FromArgb(209, 253, 213)
         End If
 
-        If My.Computer.FileSystem.FileExists(GetINI("VBMO", "bgImage")) Then
-            PrevBox.BackgroundImage = Image.FromFile(GetINI("VBMO", "bgImage"))
+        If My.Computer.FileSystem.FileExists(GetINI("BMOS", "bgImage")) Then
+            PrevBox.BackgroundImage = Image.FromFile(GetINI("BMOS", "bgImage"))
         Else
             PrevBox.BackgroundImage = Nothing
         End If
 
-        fillimg = (GetINI("VBMO", "FillBackImg") = "True")
+        fillimg = (GetINI("BMOS", "FillBackImg") = "True")
         FillImgChkUpdate()
 
-        TopMost = (GetINI("VBMO", "topmost") = "True")
+        TopMost = (GetINI("BMOS", "topmost") = "True")
 
     End Sub
 
@@ -74,9 +74,9 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If imageChanged Then SetINI("VBMO", "bgImage", """" + OpenFileDialog1.FileName + """")
-        If colorChanged Then SetINI("VBMO", "bgColor", ColorTranslator.ToHtml(ColorDialog1.Color))
-        SetINI("VBMO", "FillBackImg", fillimg.ToString)
+        If imageChanged Then SetINI("BMOS", "bgImage", """" + OpenFileDialog1.FileName + """")
+        If colorChanged Then SetINI("BMOS", "bgColor", ColorTranslator.ToHtml(ColorDialog1.Color))
+        SetINI("BMOS", "FillBackImg", fillimg.ToString)
         DesktopForm.UpdateBackTheme()
         Close()
     End Sub
@@ -87,9 +87,9 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        SetINI("VBMO", "bgImage", "")
-        SetINI("VBMO", "bgColor", "")
-        SetINI("VBMO", "FillBackImg", "")
+        SetINI("BMOS", "bgImage", "")
+        SetINI("BMOS", "bgColor", "")
+        SetINI("BMOS", "FillBackImg", "")
         DesktopForm.UpdateBackTheme()
         Close()
     End Sub

@@ -3,7 +3,7 @@
     'rightpadding: 77
 
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestoreMenuItem.Click
-        If Not (GetINI("VBMO", "killexp") = "False") Then
+        If Not (GetINI("BMOS", "killexp") = "False") Then
             Process.Start("C:\Windows\explorer.exe")
             Shell("taskkill /f /im DesktopCoral.exe")
         Else
@@ -11,7 +11,7 @@
             If pcProcess.Length < 1 Then Process.Start("C:\Windows\explorer.exe")
         End If
 
-        If Not (GetINI("VBMO", "dcautostart") = "False") Then
+        If Not (GetINI("BMOS", "dcautostart") = "False") Then
             Shell("cmd /c ""timeout 5 /nobreak && start """" ""C:\Program Files (x86)\DesktopCoral\DesktopCoral.exe""""")
         End If
 
@@ -31,15 +31,15 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If Not (GetINI("VBMO", "killexp") = "False") Then
+        If Not (GetINI("BMOS", "killexp") = "False") Then
             Shell("taskkill /f /im explorer.exe")
         End If
 
         Height = My.Computer.Screen.Bounds.Size.Height
         Width = My.Computer.Screen.WorkingArea.Width
 
-        TopMost = (GetINI("VBMO", "topmost") = "True")
-        DoubleBuffered = Not (GetINI("VBMO", "disabledbuffer") = "True")
+        TopMost = (GetINI("BMOS", "topmost") = "True")
+        DoubleBuffered = Not (GetINI("BMOS", "disabledbuffer") = "True")
 
         Me.Location = New Point(0, 0)
         ClockBT.Text = Now.ToString("HH:mm:ss")
@@ -50,19 +50,19 @@
     Public Sub UpdateBackTheme()
 
         Try
-            If Not GetINI("VBMO", "bgColor") = "" Then
-                Panel3.BackColor = ColorTranslator.FromHtml(GetINI("VBMO", "bgColor"))
+            If Not GetINI("BMOS", "bgColor") = "" Then
+                Panel3.BackColor = ColorTranslator.FromHtml(GetINI("BMOS", "bgColor"))
             Else
                 Panel3.BackColor = Color.FromArgb(209, 253, 213)
             End If
 
-            If My.Computer.FileSystem.FileExists(GetINI("VBMO", "bgImage")) Then
-                Panel3.BackgroundImage = Image.FromFile(GetINI("VBMO", "bgImage"))
+            If My.Computer.FileSystem.FileExists(GetINI("BMOS", "bgImage")) Then
+                Panel3.BackgroundImage = Image.FromFile(GetINI("BMOS", "bgImage"))
             Else
                 Panel3.BackgroundImage = Nothing
             End If
 
-            If GetINI("VBMO", "FillBackImg") = "True" Then
+            If GetINI("BMOS", "FillBackImg") = "True" Then
                 Panel3.BackgroundImageLayout = ImageLayout.Stretch
             Else
                 Panel3.BackgroundImageLayout = ImageLayout.Zoom
