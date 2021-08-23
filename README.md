@@ -1,5 +1,13 @@
 # BMOS
-BMO-PC를 위한 비모 스타일의 간단 조작 보조 소프트웨어
+BMO-PC를 위한 비모 스타일(?)의 간단 조작 보조 소프트웨어
+
+## 코드 내용
+|디렉토리명|빌드 위치|비고|
+|-|-|-|
+|`BMOS`|`BMOS\bin\Release\BMOS.exe`|메인 GUI|
+|`bmoscalc`|`bmoscalc\bin\Release\bmoscalc.exe`|계산기 프로그램|
+|`VoiceRecog`|`VoiceRecog\bin\Release\VoiceRecog.exe`|음성 명령 프로그램|
+|`BMOS.sln`||VS 프로젝트 파일|
 
 ## 요구 사항
 ### [Neo둥근모(v1.2) 폰트 다운로드 링크](https://github.com/Dalgona/neodgm/releases/download/v1.200/neodgm.ttf)
