@@ -1,0 +1,33 @@
+#기본 프로그램 명령어
+kakaotalk	카카오톡		
+chrome	크롬	구글 크롬	
+iexplore	익스플로러		
+firefox	파이어폭스		
+CMD	명령 프롬프트	콘솔	터미널
+potplayer	팟플레이어	팟 플레이어	
+mspaint	그림판	페인트
+wmplayer	플레이어	윈도우 미디어 플레이어	
+write	워드패드		
+hwp	한글	아래아한글	
+hnctt	타자연습	타자 연습	
+monzi	몬지	먼지	
+photoshop	포토샵	포샵	어도비 포토샵
+aimp	애임프	앰프	에이프
+visual studio	비주얼 스튜디오	VS	비주얼스튜디오	비쥬얼 스튜디오	비쥬얼스튜디오
+SnippingTool	캡처	캡쳐	스크린샷	스크린 샷
+control	제어판	환경 설정	옵션
+audacity	오데시티
+calc	계산기	계산 프로그램
+minecraft	마인크래프트
+
+#웹페이지, 파일경로 실행
+explorer.exe "https://naver.com"	네이버
+explorer.exe "https://youtube.com"	유튜브	유튭
+explorer.exe "https://google.com"	구글
+explorer.exe "https://daum.com"	다음
+explorer.exe "http://rainymood.com"	레이니무드	레이니 무드	rainy mood	빗소리	lany 모두	빗소리 사이트
+explorer.exe "shell:desktop"	바탕화면	바탕 화면	데스크톱	데스크탑
+explorer.exe "C:\$Recycle.Bin"	휴지통	쓰레기통
+
+#디버그용
+timeout /t 30	타임아웃
