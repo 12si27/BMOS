@@ -1,8 +1,10 @@
 ﻿from argparse import ArgumentParser
-import playsound
+import playsound, configparser
 from requests import post
 
-kakaokey = open('mykey.txt', 'r').read()
+settings = configparser.ConfigParser()
+settings.read('settings.ini')
+kakaokey = settings['KEYS']['kakao']
 
 parser = ArgumentParser() 
 parser.add_argument("-q", "--query") 
